@@ -19,7 +19,7 @@ downstream code instead of free-form prose.
 | `structured_output_typed_dict.py` | `TypedDict` + `Annotated[..., "description"]` | Lightest-weight option. Field descriptions come from `Annotated` metadata. Result is a plain `dict`. |
 | `structured_output_pydantic.py` | `pydantic.BaseModel` | Full validation, defaults, and `Field(description=...)`. Result is a typed model instance. Preferred for anything non-trivial. |
 | `structured_output_json_schema.py` | Raw JSON Schema `dict` | Useful when the schema is defined externally (e.g. loaded from a `.json` file) or shared with non-Python consumers. Result is a plain `dict`. |
-| `pydantic.py` | — | Standalone refresher on Pydantic itself: defining a `BaseModel`, validators, `Field` constraints (`gt`, `lt`, `default`), `EmailStr`, and `model_dump_json()`. Not a LangChain example. |
+| `pydantic_refresher.py` | — | Standalone refresher on Pydantic itself: defining a `BaseModel`, validators, `Field` constraints (`gt`, `lt`, `default`), `EmailStr`, and `model_dump_json()`. Not a LangChain example. |
 | `json_schema.json` | — | Tiny example JSON Schema document, kept for reference. |
 
 All three structured-output scripts use the same input: a Samsung

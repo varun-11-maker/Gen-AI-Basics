@@ -1,13 +1,13 @@
 from langchain_huggingface import HuggingFaceEndpoint, ChatHuggingFace
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
-from langchain_core.output_parsers import StringOutputParser
+from langchain_core.output_parsers import StrOutputParser
 load_dotenv()
 
 # this open source model does not support structured output so we use output parsers to convert it into structured output
 llm = HuggingFaceEndpoint(
-    repo_id = "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
-    task = "text-generation",
+    model="TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+    task="text-generation",
 )
 
 model = ChatHuggingFace(llm=llm)
@@ -22,7 +22,7 @@ template2 = PromptTemplate(
     input_variables = ["text"]
 )
 
-parser = StringOutputParser()
+parser = StrOutputParser()
 
 chain = template1 | model | parser | template2 | model | parser
 

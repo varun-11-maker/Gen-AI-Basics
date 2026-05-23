@@ -9,7 +9,11 @@ load_dotenv()
 
 model1 = ChatOpenAI()
 
-model2 = ChatAnthropic(model_name='claude-3-7-sonnet-20250219')
+model2 = ChatAnthropic(
+    model_name="claude-3-7-sonnet-20250219",
+    timeout=None,
+    stop=None,
+)
 
 prompt1 = PromptTemplate(
     template='Generate short and simple notes from the following text \n {text}',
