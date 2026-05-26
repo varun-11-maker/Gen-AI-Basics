@@ -13,6 +13,7 @@ model2 = ChatAnthropic(
     model_name="claude-3-7-sonnet-20250219",
     timeout=None,
     stop=None,
+    
 )
 
 prompt1 = PromptTemplate(
